@@ -1,5 +1,5 @@
-const mongose = require(`mongoose`);
-const productSchema = new mongose.Schema({
+const mongoose = require(`mongoose`);
+const productSchema = new mongoose.Schema({
     name: {
         type: String,
         required: true
@@ -31,6 +31,6 @@ const productSchema = new mongose.Schema({
 );
 
 //create model from schema
-const Product = mongose.model(`Product`, productSchema);
+const Product = mongoose.model(`Product`, productSchema);
 
 module.exports = Product; // export the model to be used in other files
