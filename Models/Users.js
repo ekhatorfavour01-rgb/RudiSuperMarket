@@ -19,20 +19,26 @@ const userSchema = new mongose.Schema({
         type: String,
         required: true
     },
+    HasAdminAccess: {
+        type: Boolean,
+        default: false
+    },
     phone: {
         type: String,
         required: true
     },
     role: {
-        type: string,
-        enum: [`admin`, `user`],
-        default: `user`
+        type: String,
+        enum: ['superadmin', 'storekeeper', 'salesperson'], // Define the allowed roles
+        default: 'superadmin'
     },
     
-    timestamps: true // Date created and updated at 
+   
 },
-//{timestamps: true} // Date created and updated at 
+{timestamps: true} // Date created and updated at 
 );
 
 //create model from schema
 const User = mongose.model(`User`, userSchema);
+
+module.exports = User;
