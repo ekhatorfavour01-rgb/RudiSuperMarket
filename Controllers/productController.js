@@ -33,7 +33,7 @@ exports.updateProduct = async (req, res) => {
         res.status(200).json({ message: 'Product updated successfully', product });
     }
     catch (error) {
-        res.statue(500).json({ message: 'Error updating product', error: error.message });
+        res.status(500).json({ message: 'Error updating product', error: error.message });
     }
     
 };
